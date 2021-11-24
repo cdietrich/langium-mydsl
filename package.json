@@ -1,0 +1,73 @@
+{
+    "name": "mydsl",
+    "displayName": "mydsl",
+    "description": "Please enter a brief description here",
+    "version": "0.0.1",
+    "publisher": "itemis",
+    "engines": {
+        "vscode": "^1.56.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "mydsl",
+                "aliases": [
+                    "mydsl",
+                    "mydsl"
+                ],
+                "extensions": [
+                    ".mydsl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "mydsl",
+                "scopeName": "source.mydsl",
+                "path": "./syntaxes/mydsl.tmLanguage.json"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:mydsl"
+    ],
+    "files": [
+        "bin",
+        "out",
+        "src"
+    ],
+    "bin": {
+        "mydsl-cli": "./bin/cli"
+    },
+    "main": "./out/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run build && npm run lint",
+        "build": "tsc -b tsconfig.json",
+        "watch": "tsc -b tsconfig.json --watch",
+        "lint": "eslint src --ext ts",
+        "langium:generate": "langium generate",
+        "langium:watch": "langium generate --watch"
+    },
+    "dependencies": {
+        "colors": "^1.4.0",
+        "commander": "^8.0.0",
+        "langium": "^0.2.0",
+        "vscode-languageclient": "^7.0.0",
+        "vscode-languageserver": "^7.0.0",
+        "vscode-uri": "^3.0.2"
+    },
+    "devDependencies": {
+        "@types/node": "^12.12.6",
+        "@types/vscode": "^1.56.0",
+        "@typescript-eslint/eslint-plugin": "^4.14.1",
+        "@typescript-eslint/parser": "^4.14.1",
+        "eslint": "^7.19.0",
+        "eslint-plugin-header": "^3.1.1",
+        "langium-cli": "^0.2.0",
+        "typescript": "^4.1.3"
+    }
+}

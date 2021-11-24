@@ -1,0 +1,9 @@
+{
+    "languageId": "mydsl",
+    "grammar": "src/language-server/mydsl.langium",
+    "fileExtensions": [".mydsl"],
+    "out": "src/language-server/generated",
+    "textMate": {
+        "out": "syntaxes/mydsl.tmLanguage.json"
+    }
+}

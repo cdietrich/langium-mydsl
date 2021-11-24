@@ -1,0 +1,51 @@
+{
+  "name": "mydsl",
+  "scopeName": "source.mydsl",
+  "fileTypes": [
+    ".mydsl"
+  ],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "name": "keyword.control.mydsl",
+      "match": "\\b(Hello|person)\\b"
+    },
+    {
+      "name": "keyword.symbol.mydsl",
+      "match": "(\\!)"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.mydsl",
+          "begin": "/\\*",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.mydsl"
+            }
+          },
+          "end": "\\*/",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.mydsl"
+            }
+          }
+        },
+        {
+          "begin": "//",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.whitespace.comment.leading.mydsl"
+            }
+          },
+          "end": "(?=$)",
+          "name": "comment.line.mydsl"
+        }
+      ]
+    }
+  }
+}
